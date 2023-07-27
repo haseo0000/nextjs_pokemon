@@ -1,5 +1,6 @@
 import "./globals.css";
 import "react-responsive-modal/styles.css";
+import "../styled/modalBag-styled.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReduxProvider } from "../redux/provider";
