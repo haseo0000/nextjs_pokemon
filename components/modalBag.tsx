@@ -16,7 +16,9 @@ export default function ModalBag({ openModal, closeModal }: any) {
         onClose={() => closeModal(false)}
         center
         classNames={{ modal: "customModal" }}>
-        <div className="mt-5" style={{ maxHeight: "500px" }}>
+        <div
+          className="mt-5 px-5 overflow-y-auto"
+          style={{ maxHeight: "500px" }}>
           <p className="text-2xl font-bold text-center">Your Bag</p>
           <div className="grid gap-5 mt-5 pb-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {bag.map((item: any) => (
