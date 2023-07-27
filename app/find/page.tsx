@@ -141,13 +141,18 @@ export default function Find({}: FindProps) {
       </div>
       <div className="flex gap-5 mt-5">
         <Link href={`/`}>
-          <CustomIcon icon={<GoHomeFill />} bgColor={"bg-green-600"} />
+          <CustomIcon
+            icon={<GoHomeFill />}
+            bgColor={"bg-green-600"}
+            tooltip="HOME"
+          />
         </Link>
         <CustomIcon
           handleClick={() => setOpenModalBag(true)}
           bag={bag}
           icon={<GiHandBag />}
           bgColor="bg-orange-900"
+          tooltip="BAG"
         />
       </div>
       <ModalBag openModal={openModalBag} closeModal={setOpenModalBag} />

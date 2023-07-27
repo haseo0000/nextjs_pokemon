@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import bagReducer from "./bag";
+import loadingReducer from "./loading";
 
 export const store = configureStore({
   reducer: {
     bag: bagReducer,
+    loading: loadingReducer,
   },
 });
 

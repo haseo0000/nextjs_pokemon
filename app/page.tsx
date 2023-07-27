@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { fetchDataPokemon } from "../utils/fetchData";
-import { Modal } from "react-responsive-modal";
+import Modal from "@mui/material/Modal";
 import PokemonType from "../components/pokemonType";
 import { PokemonHome } from "@/types/pokemonTypes";
 import ReactLoading from "react-loading";
@@ -76,23 +76,20 @@ export default function Home() {
     <>
       <div className="relative flex flex-col items-center border-4 border-gray-600 p-5 bg-blue-300">
         {loading ? (
-          <>
+          <div
+            style={{ minHeight: "450px" }}
+            className="grid place-items-center ">
             <ReactLoading
               type={"spin"}
               color={"black"}
-              height={350}
-              width={350}
+              height={250}
+              width={250}
             />
-          </>
+          </div>
         ) : (
           <>
             <PokemonType pokemonType={data.type} />
-            <img
-              src={data.image ?? null}
-              alt={data.image}
-              width={350}
-              height={350}
-            />
+            <img src={data.image} alt={data.image} width={350} height={350} />
             <div className="mt-10">
               <span className="text-4xl sm:text-6xl uppercase">
                 {data.name}
@@ -140,23 +137,30 @@ export default function Home() {
           bag={bag}
           icon={<GiHandBag />}
           bgColor="bg-orange-900"
+          tooltip="BAG"
         />
         <Link href={`/find`}>
-          <CustomIcon icon={<GiArchiveResearch />} bgColor="bg-green-400" />
+          <CustomIcon
+            icon={<GiArchiveResearch />}
+            bgColor="bg-green-400"
+            tooltip="SEARCH"
+          />
         </Link>
         <CustomIcon
           handleClick={() => setOpenModalMap(true)}
           icon={<GiTreasureMap />}
           bgColor="bg-orange-500"
+          tooltip="MAP"
         />
       </div>
       <ModalBag openModal={openModalBag} closeModal={setOpenModalBag} />
       <Modal
+        className="grid place-items-center"
         open={openModalMap}
         onClose={() => setOpenModalMap(false)}
-        center
-        classNames={{ modal: "customModal" }}>
-        <div>Map</div>
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <div className="bg-red-500 p-5">Map</div>
       </Modal>
     </>
   );
