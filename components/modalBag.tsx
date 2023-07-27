@@ -17,6 +17,7 @@ export default function ModalBag({ openModal, closeModal }: any) {
             background: "#b2dbbf",
             maxHeight: "500px",
             overflow: "auto",
+            WebkitOverflowScrolling: "auto",
           },
         }}
         open={openModal}
