@@ -8,7 +8,7 @@ type Props = {
 
 export default function PokemonType({ pokemonType }: Props) {
   return (
-    <div className="absolute top-0 right-0 flex flex-col gap-4 text-5xl p-5">
+    <div className="absolute top-0 right-0 flex flex-col gap-4 text-4xl p-5 sm:text-5xl">
       {pokemonType?.map((item, index) => {
         if (item === PokeMonTypes.grass) {
           return (
