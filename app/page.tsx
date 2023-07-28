@@ -83,12 +83,7 @@ export default function Home() {
             <div
               style={{ width: "350px", height: "350px" }}
               className="grid place-items-center">
-              <ReactLoading
-                type={"spin"}
-                color={"black"}
-                height={100}
-                width={100}
-              />
+              <ReactLoading type={"spin"} color={"black"} />
             </div>
           ) : (
             <>
@@ -103,7 +98,7 @@ export default function Home() {
               animation="wave"
               variant="rectangular"
               width={250}
-              height={56}
+              height={50}
             />
           ) : (
             <span className="text-4xl sm:text-6xl uppercase">{data.name}</span>
