@@ -14,6 +14,7 @@ import { RootState } from "../redux/store";
 import { useSelector, useDispatch } from "react-redux";
 import { addBag, decrementBag } from "@/redux/bag";
 import ModalBag from "@/components/modalBag";
+import Skeleton from "@mui/material/Skeleton";
 
 export default function Home() {
   const randomNumber = Math.floor(Math.random() * 1001);
@@ -77,36 +78,37 @@ export default function Home() {
       <div
         style={{ boxShadow: "10px 10px 5px 0 gray" }}
         className="flex flex-col items-center border-4 rounded-3xl border-blue-900 p-5 bg-blue-300">
-        {loading ? (
-          <div
-            style={{ minHeight: "450px" }}
-            className="grid place-items-center ">
-            <ReactLoading
-              type={"spin"}
-              color={"black"}
-              height={250}
-              width={250}
-            />
-          </div>
-        ) : (
-          <>
-            <div className="relative">
-              <img
-                src={data.image}
-                alt={data.image}
-                width={350}
-                height={350}
-                className="border-8 border-gray-500 rounded-2xl bg-white"
+        <div className="relative bg-white border-8 border-gray-500 rounded-2xl">
+          {loading ? (
+            <div
+              style={{ width: "350px", height: "350px" }}
+              className="grid place-items-center">
+              <ReactLoading
+                type={"spin"}
+                color={"black"}
+                height={200}
+                width={200}
               />
+            </div>
+          ) : (
+            <>
+              <img src={data.image} alt={data.image} width={350} height={350} />
               <PokemonType pokemonType={data.type} />
-            </div>
-            <div className="mt-10">
-              <span className="text-4xl sm:text-6xl uppercase">
-                {data.name}
-              </span>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
+        <div className="mt-10">
+          {loading ? (
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              width={250}
+              height={56}
+            />
+          ) : (
+            <span className="text-4xl sm:text-6xl uppercase">{data.name}</span>
+          )}
+        </div>
         <div className="flex gap-5 mt-10">
           {/* {number > 1 && (
             <button
@@ -116,9 +118,9 @@ export default function Home() {
             </button>
           )} */}
           <button
-            className="border border-black rounded-lg px-8 py-3 bg-black"
+            className="border rounded-lg px-8 py-3 bg-blue-950"
             onClick={handleNext}>
-            <span className="text-white">Next</span>
+            <span className="text-white">NEXT</span>
           </button>
         </div>
         <div className="flex gap-5 mt-10">
