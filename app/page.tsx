@@ -78,7 +78,7 @@ export default function Home() {
       <div
         style={{ boxShadow: "10px 10px 5px 0 gray" }}
         className="flex flex-col items-center border-4 rounded-3xl border-blue-900 p-5 bg-blue-300">
-        <div className="relative w-96 h-80 bg-white border-8 border-gray-500 rounded-2xl grid place-items-center">
+        <div className="relative w-80 h-80 sm:w-96 bg-white border-8 border-gray-500 rounded-2xl grid place-items-center">
           {loading ? (
             <ReactLoading
               type={"spin"}
@@ -88,7 +88,7 @@ export default function Home() {
             />
           ) : (
             <>
-              <img src={data.image} alt={data.image} width="300" />
+              <img src={data.image} alt={data.image} className="w-56 sm:w-64" />
               <PokemonType pokemonType={data.type} />
             </>
           )}
