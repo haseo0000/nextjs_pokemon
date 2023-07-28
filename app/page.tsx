@@ -78,16 +78,19 @@ export default function Home() {
       <div
         style={{ boxShadow: "10px 10px 5px 0 gray" }}
         className="flex flex-col items-center border-4 rounded-3xl border-blue-900 p-5 bg-blue-300">
-        <div className="relative bg-white border-8 border-gray-500 rounded-2xl">
+        <div
+          style={{ width: "350px", height: "350px" }}
+          className="relative bg-white border-8 border-gray-500 rounded-2xl grid place-items-center">
           {loading ? (
-            <div
-              style={{ width: "350px", height: "350px" }}
-              className="grid place-items-center">
-              <ReactLoading type={"spin"} color={"black"} />
-            </div>
+            <ReactLoading
+              type={"spin"}
+              color={"black"}
+              width={100}
+              height={100}
+            />
           ) : (
             <>
-              <img src={data.image} alt={data.image} width={350} height={350} />
+              <img src={data.image} alt={data.image} />
               <PokemonType pokemonType={data.type} />
             </>
           )}
