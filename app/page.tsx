@@ -74,7 +74,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative flex flex-col items-center border-4 border-gray-600 p-5 bg-blue-300">
+      <div
+        style={{ boxShadow: "10px 10px 5px 0 gray" }}
+        className=" relative flex flex-col items-center border-4 rounded-3xl border-blue-900 p-5 bg-blue-300">
         {loading ? (
           <div
             style={{ minHeight: "450px" }}
@@ -89,7 +91,13 @@ export default function Home() {
         ) : (
           <>
             <PokemonType pokemonType={data.type} />
-            <img src={data.image} alt={data.image} width={350} height={350} />
+            <img
+              src={data.image}
+              alt={data.image}
+              width={350}
+              height={350}
+              className="border-8 border-gray-500 rounded-2xl bg-white"
+            />
             <div className="mt-10">
               <span className="text-4xl sm:text-6xl uppercase">
                 {data.name}

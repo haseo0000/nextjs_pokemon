@@ -55,6 +55,7 @@ export default function Find({}: FindProps) {
       stats: respones.stats,
       image: respones.sprites.other["official-artwork"].front_default,
     });
+    setName("");
     setLoading(false);
   };
 
@@ -67,6 +68,7 @@ export default function Find({}: FindProps) {
           name="search"
           placeholder="search pokemon name..."
           autoComplete="off"
+          value={name}
           onKeyDown={(e) => handleSearchPokemon(e)}
           onChange={(e) => setName(e.target.value)}
           className="border border-black py-2 px-4 rounded-full w-full"

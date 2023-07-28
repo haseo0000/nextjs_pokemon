@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} m-3 sm:my-5 sm:mx-10 md:mx-40`}>
+      <body className={`${inter.className} m-5 md:mx-40 xl:mx-96`}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

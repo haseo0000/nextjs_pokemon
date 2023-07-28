@@ -30,7 +30,8 @@ export default function CustomIcon({
       arrow
       TransitionComponent={Zoom}>
       <div
-        className={`relative cursor-pointer border-black border rounded-full w-fit p-6 text-white text-3xl ${bgColor}`}
+        style={{ boxShadow: "0px 4px 5px 0 black" }}
+        className={`relative cursor-pointer border-black border-2 rounded-full w-fit p-6 text-white text-3xl ${bgColor}`}
         onClick={handleClick}>
         {icon}
         {bag && bag.length > 0 && (
