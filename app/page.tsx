@@ -86,8 +86,8 @@ export default function Home() {
               <ReactLoading
                 type={"spin"}
                 color={"black"}
-                height={200}
-                width={200}
+                height={100}
+                width={100}
               />
             </div>
           ) : (
